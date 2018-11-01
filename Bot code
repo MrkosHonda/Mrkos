@@ -1,0 +1,77 @@
+import discord
+from discord.ext.commands import Bot
+from discord.ext import commands
+import asyncio
+import time
+import random
+from discord import Game
+
+
+Client = discord.client
+client = commands.Bot(command_prefix = '!')
+Clientdiscord = discord.Client()
+
+
+@client.event
+async def on_ready():
+    await client.change_presence(game=Game(name='with spoons.'))
+    print('Ready, Freddy') 
+
+
+@client.event
+async def on_message(message):
+    if message.content == '!Hello':
+        await client.send_message(message.channel,'Heya!')
+    if message.content == '!img':
+        em = discord.Embed(description='Spoooooooooooon!')
+        em.set_image(url='https://www.spoonfoundation.org/wp-content/uploads/2015/10/homeApproach-2.png')
+        await client.send_message(message.channel, embed=em)
+    if message.content.startswith('!How are you?'):
+        randomlist = ["Spoon!","Good.","Dead inside.","Why you all up in my pussi boi?"]
+        await client.send_message(message.channel,(random.choice(randomlist)))
+    if message.content.startswith('!How are you'):
+        randomlist = ["Spoon!","Good.","Dead inside.","Why you all up in my pussi boi?","Where's that punctuation though? fufufu~?"]
+        await client.send_message(message.channel,(random.choice(randomlist)))
+    if message.content.startswith('!Vine'):
+        randomlist = ["https://youtu.be/luDxN1Pz6G8","https://youtu.be/D828GKYa-mM","https://youtu.be/mSuQr_Iy06E","https://youtu.be/8S3U7fFO_sA"]
+        await client.send_message(message.channel,(random.choice(randomlist)))
+    if message.content.startswith('!vine'):
+        randomlist = ["https://youtu.be/luDxN1Pz6G8","https://youtu.be/D828GKYa-mM","https://youtu.be/mSuQr_Iy06E","https://youtu.be/8S3U7fFO_sA","https://www.youtube.com/watch?v=5fJ4WlCVhyk","https://youtu.be/ao4-jG_tbnc","https://youtu.be/H4U2JdOZ4Ug","https://youtu.be/s2HGjU0ubgs","https://www.youtube.com/watch?v=jbZN9_o8fxA",]
+        await client.send_message(message.channel,(random.choice(randomlist)))
+    if message.content == '!Bofa':
+        await client.send_message(message.channel,'You have been diagnosed with Bofa!')
+    if message.content == '!Ligma':
+        await client.send_message(message.channel,'You have been diagnosed with Ligma!')
+    if message.content.startswith('!DSP'):
+        randomlist = ["Satanick","Ushio","Sirius","Pancetta","Doloz","Dull","Amemiya","Plumo","Miyura","Yatsuzaki","Sagan","Skull","Azemiti Toru","Kisaragi Alice","Ryuu","Shisatsu","Tarako","Makizno","Purim","Photon","Sonia","Shizk","Alibe","Silhouette","Greif","Benizuru (Akezuru)","Silone","Shinohara Souichirou","Lilium","Kan (Hitoki)","Reley Lo","Suzkilli","Tokinome","Mercury","Cookies","Rbona Cara","Monster in the Darkness","Sogikaze","Corvus","Mars","Hakanai","Sunosan","Shiroame","Gimone","Apicot","Shiroma","Kagimori","Jiiya","Squid","Irena","Jianshi","Hakuchu","Tuchikure","Tomoe Yahata","Kaen","Yohira","Rimorimo","Nad","Noir","Hersilia","Snowf","Kogetsu","Kurumi","Syokamori","Keika","Ivlis","Licorice","Wadanohara","Idate","Fumus","Reficul","Chlomaki","Kcalb","Etihw","Chantrieri","Glasses","Mogeko","Minami","Yonaka Kurai","Taffy","Roc Hijohshiki","Lil","Moge-ko","Syakesan (Sal)","Yosafire","Siralos","Kurotsuno","Samekichi","Shirogane","Envi","Emalf","Adauchi","Hanten","Sin","Sullivan","Tsumuri","Wodahs","Lobco","Elux","Elwine","Gris","Nagi","Old","Grora","Rocma","Mikotsuhime","Anten","Calendula","Igls Unth","Poemi","Mors","Memoca","Shinya Kurai","Lavinrac","Sherbet","Yukisada","Met","Chishibuki","Yagi","Rosaliya Phantomrose","Tsurugigozen","Liliya","Moge-kov","Kiku","Kyou","Jork","Higan","Fukami","Tatsumiya","Meikai","Meikami","Takama","Yosaflame","Artamos","Killisaki","Scor","Lzet","Defect Mogeko","Hidou","Rieta","Rigatona","Froze","King Mogeko","Killkill","Gyakuten","Olive","Heller","Aconita","Rawberry","Macarona","Totsusahime","Lasafam","Justim","Ciel","Cranber","Uomihime","Mogekov Hashasky","Sol","Crea Flankenstein","Dolpi","Chikemuri","Gokuen","Nataka Kurokawa","GriRea","Mafuyu","Ico","Charlotte","Rock","Lowrie","Ver Million","Cherryblod","The Sea King","Egmont","Chelan","Daimonji","Dialo","Kuko","Medouco","Vicers","Ater","Shrimp","Shikabone","4545","If","Lec Hijohshiki","Cosmea","Bis","Rosemary","Giltz","Fate","Laurentia","Sinow Utsuda","Lost","Kiheki","Albino","Hibuki","Fungas Crocodile","Dokugai","Odea","Satsukugi","Sakatsuki","Edabane","Raspbel","Arbus","Eclair","Laetitia","Yamori","Elco","Killie","Kras","Imika Yuhjima","Bloody Mary","Peraco","Daimajo","Rane","Mitsuki","Benihotaru","Arie","Kiki","Mikazki","Victor Flankenstein","Helica","Tetsuzora","Utareduyoi Tsubaki","Sheep","Special mogekos","Mono Chrome","Crow","Bear Claw","Aom","Hofuru","Madhata","Chloe","Luna","Hashaski","L.R.E.L.N","Nortkele Elektron","Tsuribari","Eimin",]
+        await client.send_message(message.channel,(random.choice(randomlist)))
+    if message.content == '!Kcalb':
+        await client.send_message(message.channel,'Baby boy! Baby!')
+    if message.content == '!Yosaflame':
+        await client.send_message(message.channel,'Too Pure!')
+    if message.content == '!Shirogane':
+        await client.send_message(message.channel,'Protekt baby boy!')
+    if message.content.startswith('!dsp'):
+        randomlist = ["Satanick","Ivlis","Licorice","Wadanohara","Idate","Fumus","Reficul","Chlomaki","Kcalb","Etihw","Chantrieri","Glasses","Mogeko","Minami","Yonaka Kurai","Taffy","Roc Hijohshiki","Lil","Moge-ko","Syakesan (Sal)","Yosafire","Siralos","Kurotsuno","Samekichi","Shirogane","Envi","Emalf","Adauchi","Hanten","Sin","Sullivan","Tsumuri","Wodahs","Lobco","Elux","Elwine","Gris","Nagi","Old","Grora","Rocma","Mikotsuhime","Anten","Calendula","Igls Unth","Poemi","Mors","Memoca","Shinya Kurai","Lavinrac","Sherbet","Yukisada","Met","Chishibuki","Yagi","Rosaliya Phantomrose","Tsurugigozen","Liliya","Moge-kov","Kiku","Kyou","Jork","Higan","Fukami","Tatsumiya","Meikai","Meikami","Takama","Yosaflame","Artamos","Killisaki","Scor","Lzet","Defect Mogeko","Hidou","Rieta","Rigatona","Froze","King Mogeko","Killkill","Gyakuten","Olive","Heller","Aconita","Rawberry","Macarona","Totsusahime","Lasafam","Justim","Ciel","Cranber","Uomihime","Mogekov Hashasky","Sol","Crea Flankenstein","Dolpi","Chikemuri","Gokuen","Nataka Kurokawa","GriRea","Mafuyu","Ico","Charlotte","Rock","Lowrie","Ver Million","Cherryblod","The Sea King","Egmont","Chelan","Daimonji","Dialo","Kuko","Medouco","Vicers","Ater","Shrimp","Shikabone","4545","If","Lec Hijohshiki","Cosmea","Bis","Rosemary","Giltz","Fate","Laurentia","Sinow Utsuda","Lost","Kiheki","Albino","Hibuki","Fungas Crocodile","Dokugai","Odea","Satsukugi","Sakatsuki","Edabane","Raspbel","Arbus","Eclair","Laetitia","Yamori","Elco","Killie","Kras","Imika Yuhjima","Bloody Mary","Peraco","Daimajo","Rane","Mitsuki","Benihotaru","Arie","Kiki","Mikazki","Victor Flankenstein","Helica","Tetsuzora","Utareduyoi Tsubaki","Sheep","Special mogekos","Mono Chrome","Crow","Bear Claw","Aom","Hofuru","Madhata","Chloe","Luna","Hashaski","L.R.E.L.N","Nortkele Elektron","Tsuibari","Eimin",]
+        await client.send_message(message.channel,(random.choice(randomlist)))
+    if message.content == '!Commands':
+        await client.send_message(message.channel,'/!DSP / !dsp = Picks a random Deep Sea Prisioner Character ; !Bofa ; !Ligma ; !Vine / !vine ; !img ; !Hello ; !How are you / !How are you? ; !Dari ; !Ross ')
+    if message.content == '!Dari':
+        await client.send_message(message.channel,'Uncle is well, please stop asking about him.')
+    if message.content == '!Ross':
+        await client.send_message(message.channel,'Evillll....')
+    if message.content == '!meme':
+        await client.send_message(message.channel,'Your life')
+    if message.content == '!About Mrkos':
+        await client.send_message(message.channel,'Hello! I am Mrkos, a robot created by the limitless mind of our master, Ross. I have a younger brother named Honda! We together are a smart and intelectual bank made only for your disposal. Our life spans are made to be very long to help us withold information for a long time before passing it along. We are also skilled in many different medical fields and have some basic combat knowledge. In contrast to the others we are compared with and to.')
+    if message.content.startswith('!Mrkos'):
+        randomlist = ["Hello!","Yes?","I am here.","What do you need?"]
+        await client.send_message(message.channel,(random.choice(randomlist)))
+    if message.content.startswith('!mrkos'):
+        randomlist = ["Hello!","Yes?","I am here.","What do you need?"]
+        await client.send_message(message.channel,(random.choice(randomlist)))
+    if message.content == '!Relax':
+        em = discord.Embed(description='Uwaaa~! ')
+        em.set_image(url='https://pbs.twimg.com/media/DNnSdDKUMAA3AL4.jpg')
+        await client.send_message(message.channel, embed=em)
+client.run('NTA3MzI4MzY2OTAzNDI3MDgy.Drv1sw.GDvWTuq4ev3sSNJKkfihbeX_uWE')
